@@ -8,24 +8,24 @@ import org.testng.collections.Lists;
 
 public class App {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
 
-		System.out.println("Executing");
+        System.out.println("Executing");
 
-		TestListenerAdapter tla = new TestListenerAdapter();
-		TestNG testng = new TestNG();
+        TestListenerAdapter tla = new TestListenerAdapter();
+        TestNG testng = new TestNG();
 
-		testng.addListener(tla);
-		// testng.setTestClasses(new Class[] { test.TestTitle.class });
+        testng.addListener(tla);
+        // testng.setTestClasses(new Class[] { test.TestTitle.class });
 
-		List<String> suites = Lists.newArrayList();
-		suites.add("testng.xml");// path to xml..
+        List < String > suites = Lists.newArrayList();
+        suites.add("testng.xml"); // path to xml..
 
-		testng.setTestSuites(suites);
+        testng.setTestSuites(suites);
 
-		testng.run();
+        testng.run();
 
-	}
+    }
 
 }
