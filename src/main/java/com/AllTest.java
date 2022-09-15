@@ -48,7 +48,7 @@ public class AllTest {
         pg.setSearchTerm(searchTerm);
         pg.clickSearchButton();
         assert(pg.getSearchResult().toString().contains(searchTerm));
-        System.out.println("Validated Searched Result");
+        System.out.println("Validated Searched Result after entring Searched terms ");
         System.out.println("**************");
         System.out.println('\n');
         // driver =pg.getDriver();
