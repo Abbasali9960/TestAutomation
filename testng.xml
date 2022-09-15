@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="none">
+<test name="Google Maps Test" group-by-instances="true">
+<parameter name="myURL" value="http://automationpractice.com/index.php"/>
+<parameter name="myTitle" value="My Store"/>
+<parameter name="searchTerm" value="t Shirt"/>
+<parameter name="myDress" value="Faded Short Sleeve T-shirts"/>
+
+<classes>
+<class name="com.AllTest"/>
+</classes>
+</test>
+<!--  Test  -->
+</suite>
+<!--  Suite  -->
