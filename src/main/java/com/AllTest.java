@@ -62,6 +62,9 @@ public class AllTest {
    	   pg1.clickTopCategory();
    	   pg1.clickColor();
     	 assert(pg1.getSearchResult().toString().contains(myDress));
+    	 System.out.println("Validated Result after Selection");	
+    	   System.out.println("**************");	
+    	   System.out.println('\n');
    	}
 	
     @BeforeTest
