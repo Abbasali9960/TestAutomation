@@ -1,0 +1,13 @@
+Query 1 : 
+
+select * from contacts where email IS NOT NULL and phone IS NOT NULL
+
+Query 2 : 
+
+SELECT COUNT(*) FROM users GROUP BY groupId;
+
+Query 3 : 
+
+SELECT cus.customerName , ord.OrderId, ord.orderDate  from Customers cus , Orders ord
+
+where cus.id = ord.customerId
