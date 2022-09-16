@@ -85,6 +85,34 @@ def actualHTTPResponse = hearders['#status#']
 
 assert actualHTTPResponse[0]=="HTTP/1.1 418 I'm a Teapot"
 
+assert messageExchange.getResponseContent()=="I'm a teapot"</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="[negative case] Create Booking[No body]" id="1cf45af0-278e-486e-a330-a2187cf4a3ef"><con:settings/><con:config service="CreateBooking" resourcePath="/booking" methodName="Booking 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="[negative case] Create Booking[no id]" id="1024437c-7515-46c8-9718-43c881bb4c46" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>${#Project#envUrl}</con:endpoint><con:request/><con:originalUri>https://restful-booker.herokuapp.com/booking</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="3b36754e-395e-49e0-8252-bee16a75e221" name="Valid HTTP Status Codes"><con:configuration><codes>500</codes></con:configuration></con:assertion><con:assertion type="Invalid HTTP Status Codes" id="d8bda446-befe-472d-a9d9-569b94241b89" name="Invalid HTTP Status Codes"><con:configuration><codes>201,204,403,401</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="e61615eb-8516-4189-bcb1-62dba2c390bd" name="Script Assertion"><con:configuration><scriptText>def hearders = messageExchange.response.responseHeaders
+
+def actualHTTPResponse = hearders['#status#']
+
+assert actualHTTPResponse[0]=="HTTP/1.1 500 Internal Server Error"
+
+assert messageExchange.getResponseContent()=="Internal Server Error"</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="[negative case] Create Booking [Invalid Header]" id="42de310a-666c-46a9-84de-867fc0b0336d"><con:settings/><con:config service="CreateBooking" resourcePath="/booking" methodName="Booking 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="[Negative case] Create Booking [Invalid Header]" id="1024437c-7515-46c8-9718-43c881bb4c46" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="ssssss"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>${#Project#envUrl}</con:endpoint><con:request>{
+    "firstname" : "Jim",
+    "lastname" : "Brown",
+    "totalprice" : 111,
+    "depositpaid" : true,
+    "bookingdates" : {
+        "checkin" : "2022-09-01",
+        "checkout" : "2022-09-01"
+    },
+    "additionalneeds" : "Breakfast"
+}</con:request><con:originalUri>https://restful-booker.herokuapp.com/booking</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="3b36754e-395e-49e0-8252-bee16a75e221" name="Valid HTTP Status Codes"><con:configuration><codes>418</codes></con:configuration></con:assertion><con:assertion type="Invalid HTTP Status Codes" id="d8bda446-befe-472d-a9d9-569b94241b89" name="Invalid HTTP Status Codes"><con:configuration><codes>201,204,400,500,401</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="b6cd9e4b-19b2-422b-8112-5961c1ede8bf" name="Script Assertion"><con:configuration><scriptText>def hearders = messageExchange.response.responseHeaders
+
+def actualHTTPResponse = hearders['#status#']
+
+assert actualHTTPResponse[0]=="HTTP/1.1 418 I'm a Teapot"
+
 assert messageExchange.getResponseContent()=="I'm a teapot"</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="8837aa99-9196-438c-92b9-eb0e1d836ad3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="UpdateBooking" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Create Booking" id="281c6118-15c5-4f76-b8a1-8a3b42785427"><con:settings/><con:config service="CreateBooking" resourcePath="/booking" methodName="Booking 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="[Positive case] Create Booking" id="1024437c-7515-46c8-9718-43c881bb4c46" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
   &lt;con:entry key="Accept" value="application/json"/>&#13;
   &lt;con:entry key="Content-Type" value="application/json"/>&#13;
